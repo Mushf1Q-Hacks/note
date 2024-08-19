@@ -1,0 +1,25 @@
+network:
+  version: 2
+  renderer: NetworkManager
+  ethernets:
+    ens18:
+      match:
+        name: "ens18"
+      addresses:
+        - "103.112.63.79/32"
+        - "103.112.62.79/32"
+      gateway4: "103.112.62.1"
+      nameservers:
+        addresses:
+          - 103.112.62.2
+          - 103.112.63.2
+      dhcp6: true
+      wakeonlan: true
+      networkmanager:
+        passthrough:
+          ethernet._: ""
+          ipv4.address1: "103.112.63.79/32,103.112.62.1"
+          ipv4.method: "manual"
+          ipv6.addr-gen-mode: "default"
+          ipv6.ip6-privacy: "-1"
+          proxy._: ""
